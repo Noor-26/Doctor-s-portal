@@ -8,7 +8,7 @@ import phone from '../../../images/icons/phone.png'
 export default function Info() {
     const infos =[
         {id:1,
-            description:"we will be you side on 24/7",name:"Opening hours",
+            description:"From 9.00am to 11.00pm",name:"Opening hours",
             img:clock,
             bg:"bg-gradient-to-r from-secondary to-primary"},
         {id:2,
