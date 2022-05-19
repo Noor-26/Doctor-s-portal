@@ -9,6 +9,7 @@ import Contact from './Components/Contact/Contact';
 import Login from './Components/Login/Login/Login';
 import Register from './Components/Login/Register/Register';
 import Review from './Components/Review/Review';
+import Footer from './Components/Shared/Footer/Footer';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
      <Route path="/Review" element={<Review/>}/>
      <Route path="/contact" element={<Contact/>}/>
    </Routes>
+   <Footer/>
     </div>
   );
 }
