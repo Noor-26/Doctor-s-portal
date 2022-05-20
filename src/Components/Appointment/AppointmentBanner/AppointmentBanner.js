@@ -9,7 +9,7 @@ export default function AppointmentBanner({selected,setSelected}) {
 
   return (
     <div className="hero min-h-screen bg-base-100">
-        <div className="hero-content flex-col  lg:flex-row-reverse">
+        <div className="hero-content flex flex-col lg:flex-row-reverse">
           <img src={chairImg} className="max-w-sm rounded-lg shadow-2xl" />
           <div>
           <DayPicker 

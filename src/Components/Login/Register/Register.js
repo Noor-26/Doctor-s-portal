@@ -4,6 +4,7 @@ import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../Shared/useToken/useToken';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -15,10 +16,11 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
       const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+      const [token] = useToken(user || googleUser)
       const navigate = useNavigate()
       let signError;
 
-    if (user || googleUser) {
+    if (token) {
         navigate('/appointment')
     }
     if (loading || googleLoading || updating) {
@@ -28,7 +30,7 @@ const Register = () => {
         signError = <p className='text-red-500 mt-2'>{error.message}</p>
     }
     const onSubmit = async data => {
-        console.log(data)
+        
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name })
        
@@ -37,7 +39,7 @@ const Register = () => {
         <div className='flex h-screen justify-center items-center border'>
         <div className='card w-96 bg-base-100 shadow-xl p-4 '>
             <div className='card body p-4'>
-                <p className='text-center font bold text-2xl'>Login</p>
+                <p className='text-center font bold text-2xl'>Sign Up</p>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full max-w-xs">
@@ -49,8 +51,7 @@ const Register = () => {
                                 value: true,
                                 message: "name is required!"
                             },
-                          
-
+                
                         })} />
 
                         {errors.name?.type === 'required' && <span className='label-text-alt text-red-500 ' >{errors.name.message}</span>}

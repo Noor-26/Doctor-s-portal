@@ -31,9 +31,9 @@ const Login = () => {
         signError = <p className='text-red-500 mt-2'>{error.message}</p>
     }
     const onSubmit = data => {
-        console.log(data)
+        
         signInWithEmailAndPassword(data.email, data.password)
-        console.log("login complete")
+        
     };
     return (
         <div className='flex h-screen justify-center items-center border'>
