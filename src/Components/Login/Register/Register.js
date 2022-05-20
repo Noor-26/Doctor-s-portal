@@ -21,10 +21,10 @@ const Register = () => {
     if (user || googleUser) {
         navigate('/appointment')
     }
-    if (loading || googleLoading) {
+    if (loading || googleLoading || updating) {
         return <Loading />
     }
-    if (error || googleError) {
+    if (error || googleError || updateError) {
         signError = <p className='text-red-500 mt-2'>{error.message}</p>
     }
     const onSubmit = async data => {

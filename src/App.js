@@ -10,6 +10,7 @@ import Login from './Components/Login/Login/Login';
 import Register from './Components/Login/Register/Register';
 import Review from './Components/Review/Review';
 import Footer from './Components/Shared/Footer/Footer';
+import Requireauth from './Components/Shared/Requireauth/Requireauth';
 
 function App() {
 
@@ -19,7 +20,9 @@ function App() {
    <Routes>
      <Route path="/" element={<Home/>}/>
      <Route path="/about" element={<About/>}/>
-     <Route path="/appointment" element={<Appointment/>}/>
+     <Route path="/appointment" element={<Requireauth>
+      <Appointment/>
+     </Requireauth>}/> 
      <Route path="/login" element={<Login/>}/>
      <Route path="/register" element={<Register/>}/>
      <Route path="/Review" element={<Review/>}/>
