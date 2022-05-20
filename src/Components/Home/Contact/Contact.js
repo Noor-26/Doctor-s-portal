@@ -9,16 +9,16 @@ export default function Contact() {
     }}>
         <p className='text-primary font-bold mt-5 pt-5'>Contact us</p>
         <p className='text-3xl text-white'>Stay connected with us</p>
-      <div class="card-body w-2/4 mx-auto  ">
-      <input type="email" placeholder="Email address" class="input input-bordered w-full max-w-md mx-auto" />
-      <input type="email" placeholder="Subject" class="input input-bordered w-full max-w-md mx-auto" />
+      <div className="card-body w-2/4 mx-auto  ">
+      <input type="email" placeholder="Email address" className="input input-bordered w-full max-w-md mx-auto" />
+      <input type="email" placeholder="Subject" className="input input-bordered w-full max-w-md mx-auto" />
       
 
-      <textarea class="textarea textarea-bordered max-w-md mx-auto " placeholder="Your massage" cols="63" rows="6" ></textarea>
+      <textarea className="textarea textarea-bordered max-w-md mx-auto " placeholder="Your massage" cols="63" rows="6" ></textarea>
     
       
 
-        <div class="form-control mt-6 mx-auto block">
+        <div className="form-control mt-6 mx-auto block">
             
           <Button >Submit</Button>
         </div>

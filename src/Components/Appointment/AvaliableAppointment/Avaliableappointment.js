@@ -6,9 +6,9 @@ import Bookingmodal from '../Bookingmodal';
 export default function Avaliableappointment({selected}) {
   const [services, setservice] = useState([])
   const [treatment,setTreatment] = useState({})
-  
+  const formateDate = format(selected,'PP')
   useEffect(() => {
-   fetch('http://localhost:5000/service')
+   fetch(`http://localhost:5000/avaliable?date=${formateDate}`)
    .then(res => res.json())
    .then(data => setservice(data))
 

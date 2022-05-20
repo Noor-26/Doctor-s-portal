@@ -40,11 +40,11 @@ const Register = () => {
                 <p className='text-center font bold text-2xl'>Login</p>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Email</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Email</span>
                         </label>
-                        <input type="text" placeholder="Enter your name" class="input input-bordered w-full max-w-xs" {...register("name", {
+                        <input type="text" placeholder="Enter your name" className="input input-bordered w-full max-w-xs" {...register("name", {
                             required: {
                                 value: true,
                                 message: "name is required!"
@@ -56,11 +56,11 @@ const Register = () => {
                         {errors.name?.type === 'required' && <span className='label-text-alt text-red-500 ' >{errors.name.message}</span>}
 
                     </div>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Email</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Email</span>
                         </label>
-                        <input type="email" placeholder="Enter your email" class="input input-bordered w-full max-w-xs" {...register("email", {
+                        <input type="email" placeholder="Enter your email" className="input input-bordered w-full max-w-xs" {...register("email", {
                             required: {
                                 value: true,
                                 message: "Email is required!"
@@ -76,11 +76,11 @@ const Register = () => {
 
                         {errors.email?.type === 'pattern' && <span className='label-text-alt text-red-500 ' >{errors.email.message}</span>}
                     </div>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Password</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Password</span>
                         </label>
-                        <input type="password" placeholder="Enter your Password" class="input input-bordered w-full max-w-xs " {...register("password", {
+                        <input type="password" placeholder="Enter your Password" className="input input-bordered w-full max-w-xs " {...register("password", {
                             required: {
                                 value: true,
                                 message: "Password not found!"
@@ -103,7 +103,7 @@ const Register = () => {
                         <p className='font-bold'>Already a user?<Link to="/login" className='text-primary font-normal'> login here</Link> </p>
                 <div className='divider'>OR</div>
                 <button
-                    class="btn btn-outline"
+                    className="btn btn-outline"
                     onClick={() => signInWithGoogle()}
                 >Continue with google</button>
             </div>

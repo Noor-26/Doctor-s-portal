@@ -11,7 +11,11 @@ import Register from './Components/Login/Register/Register';
 import Review from './Components/Review/Review';
 import Footer from './Components/Shared/Footer/Footer';
 import Requireauth from './Components/Shared/Requireauth/Requireauth';
-
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Myappointment from './Components/Dashboard/Myappointment';
+import Myreview from './Components/Dashboard/Myreview';
 function App() {
 
   return (
@@ -23,12 +27,19 @@ function App() {
      <Route path="/appointment" element={<Requireauth>
       <Appointment/>
      </Requireauth>}/> 
+     <Route path="/dashboard" element={<Requireauth>
+      <Dashboard/>
+     </Requireauth>}>
+       <Route index element={<Myappointment/>} />
+       <Route path="myreview" element={<Myreview/>} />
+       </Route> 
      <Route path="/login" element={<Login/>}/>
      <Route path="/register" element={<Register/>}/>
-     <Route path="/Review" element={<Review/>}/>
+     <Route path="/review" element={<Review/>}/>
      <Route path="/contact" element={<Contact/>}/>
    </Routes>
    <Footer/>
+   <ToastContainer/>
     </div>
   );
 }

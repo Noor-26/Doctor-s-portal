@@ -42,11 +42,11 @@ const Login = () => {
                     <p className='text-center font bold text-2xl'>Login</p>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="Enter your email" class="input input-bordered w-full max-w-xs" {...register("email", {
+                            <input type="email" placeholder="Enter your email" className="input input-bordered w-full max-w-xs" {...register("email", {
                                 required: {
                                     value: true,
                                     message: "Email is required!"
@@ -62,11 +62,11 @@ const Login = () => {
 
                             {errors.email?.type === 'pattern' && <span className='label-text-alt text-red-500 ' >{errors.email.message}</span>}
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="Enter your Password" class="input input-bordered w-full max-w-xs " {...register("password", {
+                            <input type="password" placeholder="Enter your Password" className="input input-bordered w-full max-w-xs " {...register("password", {
                                 required: {
                                     value: true,
                                     message: "Password not found!"
@@ -89,7 +89,7 @@ const Login = () => {
                             <p className='font-bold'>Don't have a account?<Link to="/register" className='text-primary font-normal'> Create new account</Link> </p>
                     <div className='divider'>OR</div>
                     <button
-                        class="btn btn-outline"
+                        className="btn btn-outline"
                         onClick={() => signInWithGoogle()}
                     >Continue with google</button>
                 </div>
