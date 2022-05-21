@@ -19,6 +19,7 @@ import Myreview from './Components/Dashboard/Myreview';
 import User from './Components/Dashboard/User';
 import RequireAdmin from './Components/Shared/RequireAdmin/RequireAdmin';
 import Adddoctor from './Components/Adddoctor/Adddoctor';
+import Managedoctor from './Components/Dashboard/Managedoctor';
 function App() {
 
   return (
@@ -36,6 +37,7 @@ function App() {
        <Route index element={<Myappointment/>} />
        <Route path="myreview" element={<Myreview/>} />
        <Route path="adddoctor" element={<Adddoctor/>} />
+       <Route path="managedoctor" element={<Managedoctor/>} />
        <Route path="users" element={
          <RequireAdmin>
            <User/>
