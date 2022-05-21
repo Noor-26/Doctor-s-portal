@@ -22,7 +22,10 @@ function Dashboard() {
 
       <li><Link to='/dashboard'>My Appointment</Link></li>
       <li><Link to='/dashboard/myreview'>My Review</Link></li>
-      {admin && <li><Link to='/dashboard/users'>All users</Link></li>}
+      {admin && <>
+        <li><Link to='/dashboard/users'>All users</Link></li>
+        <li><Link to='/dashboard/adddoctor'>Add doctor</Link></li>
+      </>}
     </ul>
   
   </div>

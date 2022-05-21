@@ -17,6 +17,8 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Myappointment from './Components/Dashboard/Myappointment';
 import Myreview from './Components/Dashboard/Myreview';
 import User from './Components/Dashboard/User';
+import RequireAdmin from './Components/Shared/RequireAdmin/RequireAdmin';
+import Adddoctor from './Components/Adddoctor/Adddoctor';
 function App() {
 
   return (
@@ -33,7 +35,12 @@ function App() {
      </Requireauth>}>
        <Route index element={<Myappointment/>} />
        <Route path="myreview" element={<Myreview/>} />
-       <Route path="users" element={<User/>} />
+       <Route path="adddoctor" element={<Adddoctor/>} />
+       <Route path="users" element={
+         <RequireAdmin>
+           <User/>
+         </RequireAdmin>
+       } />
        </Route> 
      <Route path="/login" element={<Login/>}/>
      <Route path="/register" element={<Register/>}/>

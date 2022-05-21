@@ -20,6 +20,23 @@ function Userrole({user,index,refetch}) {
             console.log(data)
         })
     }
+    const deleteUser = () => {
+        fetch(`http://localhost:5000/user/admin/${email}`,
+        {
+            method:'DELETE',
+            headers:{
+                authorization : `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+        .then(res => {
+            if(res.status === 403){
+                toast.error("Failed to make user admin  (-_-)")
+            }
+            res.json()})
+        .then(data => {
+            console.log(data)
+        })
+    }
   return (
     <tr>
     <th>{index+1}</th>
