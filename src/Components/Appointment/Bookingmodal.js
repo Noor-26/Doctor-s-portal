@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import auth from '../../firebase.init'
 import Loading from '../Shared/Loading/Loading'
 
-export default function Bookingmodal({treatment,selected,setTreatment}) {
+export default function Bookingmodal({treatment,selected,setTreatment,refetch}) {
     const {name,slots,_id} = treatment
     const [user,loading] = useAuthState(auth)
     if(loading){
@@ -43,6 +43,7 @@ export default function Bookingmodal({treatment,selected,setTreatment}) {
             toast('you already have an appointment')
           }
           setTreatment(null) 
+          refetch()
         })
     }
   return (

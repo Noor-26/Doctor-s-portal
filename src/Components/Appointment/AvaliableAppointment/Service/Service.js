@@ -1,8 +1,8 @@
 import React from 'react'
 import Button from '../../../Shared/Button/Button'
 
-export default function Service({service,setTreatment}) {
-    const {name,slots,avaliable} = service
+export default function Service({service,setTreatment,refetch}) {
+    const {name,slots,avaliable,price} = service
     
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
@@ -13,6 +13,7 @@ export default function Service({service,setTreatment}) {
           : <span className='text-red-500'> No slots avaliable,Try another day </span>
           }</p>
       <p>{avaliable.length } {avaliable.length < 2 ? "space" : "spaces"} Available</p>
+      <p>Price : ${price}</p>
       <div className="card-actions">
 
        <label htmlFor="treatment-modal" 
